@@ -1,6 +1,6 @@
 use std::net::TcpListener;
 
-use sqlx::{PgConnection, Connection};
+use sqlx::{Connection, PgConnection};
 use zero2prod::{self, configuration::get_configuration};
 
 fn spawn_app() -> String {
@@ -63,7 +63,6 @@ async fn subscribe_returns_a_200_for_valid_form_data() {
 
     assert_eq!(saved.email, "ursula_le_guin@gmail.com");
     assert_eq!(saved.name, "le guin");
-
 }
 
 #[tokio::test]
